@@ -32,5 +32,11 @@ class Product(models.Model):
         default=0
     )
 
+    image = models.ImageField(
+        upload_to='products/',
+        blank=True,
+        null=True
+    )
+
     def __str__(self):
         return self.name
