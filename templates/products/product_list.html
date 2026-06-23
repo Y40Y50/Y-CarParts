@@ -24,7 +24,9 @@
 
                 {% for category in categories %}
                 <li class="list-group-item">
-                    {{ category.name }}
+                    <a href="{% url 'products' %}?category={{ category.id }}" class="text-decoration-none">
+                        {{ category.name }}
+                    </a>
                 </li>
                 {% endfor %}
 
