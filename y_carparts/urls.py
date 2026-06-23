@@ -73,3 +73,7 @@ if settings.DEBUG:
         document_root=settings.MEDIA_ROOT
     )
 
+    urlpatterns += static(
+        settings.STATIC_URL,
+        document_root=settings.STATICFILES_DIRS[0]
+    )
