@@ -8,10 +8,14 @@
 
     {% for product in products %}
 
-    <div class="col-md-4 mb-4">
+    <div class="col-md-3 mb-4">
         <div class="card">
 
             <div class="card-body">
+                {% if product.image %}
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}"
+                    style="height: 300px; object-fit: contain; background:#f8f9fa;">
+                {% endif %}
                 <h5>{{ product.name }}</h5>
 
                 <p>

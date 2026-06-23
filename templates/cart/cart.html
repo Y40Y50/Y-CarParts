@@ -12,9 +12,23 @@
         <div class="card-body">
             <h5>{{ item.product.name }}</h5>
 
-            <p>Quantity: {{ item.quantity }}</p>
+            <form method="post" action="{% url 'decrease_quantity' item.product.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button class="btn btn-sm btn-secondary">-</button>
+            </form>
+
+            <strong class="mx-2">{{ item.quantity }}</strong>
+
+            <form method="post" action="{% url 'increase_quantity' item.product.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button class="btn btn-sm btn-success">+</button>
+            </form>
 
             <p>Subtotal: £{{ item.subtotal }}</p>
+
+            <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">
+                Remove
+            </a>
         </div>
     </div>
 
