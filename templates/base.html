@@ -30,7 +30,7 @@
                 </a>
                 <a href="{% url 'cart' %}"
                     class="btn {% if request.path == '/cart/' %}btn-primary{% else %}btn-outline-light{% endif %}">
-                    Cart
+                    Cart ({{ cart_count }})
                 </a>
             </div>
 
