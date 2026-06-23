@@ -4,6 +4,7 @@ from cart.views import add_to_cart
 from cart.views import cart_view, remove_from_cart
 from django.conf import settings
 from django.conf.urls.static import static
+from checkout.views import checkout
 
 from products.views import (
     home,
@@ -59,6 +60,11 @@ urlpatterns = [
         'cart/decrease/<int:product_id>/',
         decrease_quantity,
         name='decrease_quantity'
+    ),
+    path(
+        'checkout/',
+        checkout,
+        name='checkout'
     ),
 ]
 if settings.DEBUG:
