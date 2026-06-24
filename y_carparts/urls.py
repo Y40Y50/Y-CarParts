@@ -6,6 +6,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from checkout.views import checkout
 
+
 from products.views import (
     home,
     product_list,
@@ -68,7 +69,11 @@ urlpatterns = [
     ),
     path('', include('django.contrib.auth.urls')),
     path('', include('profiles.urls')),
+
+    path('', include('profiles.urls')),
 ]
+
+
 if settings.DEBUG:
     urlpatterns += static(
         settings.MEDIA_URL,
