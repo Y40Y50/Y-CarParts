@@ -4,7 +4,6 @@ from cart.views import add_to_cart
 from cart.views import cart_view, remove_from_cart
 from django.conf import settings
 from django.conf.urls.static import static
-from checkout.views import checkout
 
 
 from products.views import (
@@ -20,6 +19,15 @@ from cart.views import (
     increase_quantity,
     decrease_quantity,
 )
+
+from checkout.views import (
+    checkout,
+    payment_success,
+    payment_cancel,
+    create_checkout_session,
+)
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -70,7 +78,23 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('', include('profiles.urls')),
 
-    path('', include('profiles.urls')),
+    path(
+        'success/',
+        payment_success,
+        name='payment_success'
+    ),
+
+    path(
+        'cancel/',
+        payment_cancel,
+        name='payment_cancel'
+    ),
+    path(
+        'create-checkout-session/',
+        create_checkout_session,
+        name='create_checkout_session'
+    ),
+
 ]
 
 

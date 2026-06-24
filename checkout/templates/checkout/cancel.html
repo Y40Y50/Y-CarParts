@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+    <h1 class="text-danger">
+        Payment Cancelled
+    </h1>
+
+    <p>
+        Your payment was not completed.
+    </p>
+
+    <a href="{% url 'checkout' %}" class="btn btn-warning">
+        Try Again
+    </a>
+</div>
+
+{% endblock %}
