@@ -1,18 +1,27 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
+from django.db.models import Q
 
 def home(request):
     return render(request, 'home.html')
 
 def product_list(request):
-    category_id = request.GET.get('category')
-
     products = Product.objects.all()
-
-    if category_id:
-        products = products.filter(category_id=category_id)
-
     categories = Category.objects.all()
+
+    selected_category = request.GET.get('category')
+    search_query = request.GET.get('search')
+
+    if selected_category:
+        products = products.filter(
+            category_id=selected_category
+        )
+
+    if search_query:
+        products = products.filter(
+            Q(name__icontains=search_query) |
+            Q(description__icontains=search_query)
+        )
 
     return render(
         request,
@@ -20,6 +29,8 @@ def product_list(request):
         {
             'products': products,
             'categories': categories,
+            'selected_category': selected_category,
+            'search_query': search_query,
         }
     )
 
