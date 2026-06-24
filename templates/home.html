@@ -3,8 +3,12 @@
 {% block content %}
 
 <div class="text-center">
+    {% if user.is_authenticated %}
+    <h1 class="display-4">Welcome {{ user.username }} to Y-CarParts</h1>
+    {% else %}
     <h1 class="display-4">Welcome to Y-CarParts</h1>
-
+    {% endif %}
+    
     <p class="lead">
         Quality car parts at competitive prices
     </p>

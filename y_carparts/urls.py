@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from cart.views import add_to_cart
 from cart.views import cart_view, remove_from_cart
 from django.conf import settings
@@ -66,6 +66,8 @@ urlpatterns = [
         checkout,
         name='checkout'
     ),
+    path('', include('django.contrib.auth.urls')),
+    path('', include('profiles.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(

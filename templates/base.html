@@ -25,7 +25,19 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
 
-                <div class="ms-auto d-flex flex-column flex-lg-row gap-2">
+                <div class="ms-auto d-flex align-items-center gap-2">
+                    {% if user.is_authenticated %}
+                    <span class="text-white align-self-center me-2">
+                        Hello, {{ user.username }}
+                    </span>
+
+                    <form method="post" action="{% url 'logout' %}" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">
+                            Logout
+                        </button>
+                    </form>
+                    {% endif %}
                     <a href="{% url 'home' %}"
                         class="btn {% if request.path == '/' %}btn-primary{% else %}btn-outline-light{% endif %}">
                         Home
@@ -40,6 +52,19 @@
                         class="btn {% if request.path == '/cart/' %}btn-primary{% else %}btn-outline-light{% endif %}">
                         Cart ({{ cart_count }})
                     </a>
+                    {% if user.is_authenticated %}
+
+                    {% else %}
+
+                    <a href="{% url 'login' %}" class="btn btn-outline-light">
+                        Login
+                    </a>
+
+                    <a href="{% url 'register' %}" class="btn btn-success">
+                        Register
+                    </a>
+
+                    {% endif %}
                 </div>
 
             </div>
