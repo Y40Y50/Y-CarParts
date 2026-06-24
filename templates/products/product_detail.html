@@ -32,7 +32,63 @@
     <strong>Stock:</strong>
     {{ product.stock }}
 </p>
+<hr>
 
+<h3>Reviews</h3>
+
+{% for review in reviews %}
+
+<div class="card mb-3">
+    <div class="card-body">
+
+        <strong>{{ review.user.username }}</strong>
+
+        <small class="text-muted">
+            {{ review.created_at }}
+        </small>
+
+        <p class="mt-2">
+            {{ review.comment }}
+        </p>
+
+    </div>
+</div>
+
+{% empty %}
+
+<p>No reviews yet.</p>
+
+{% endfor %}
+
+{% if user.is_authenticated %}
+
+<hr>
+
+<h4>Leave a Review</h4>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-success">
+        Submit Review
+    </button>
+
+</form>
+
+{% else %}
+
+<p>
+    Please
+    <a href="{% url 'login' %}">
+        login
+    </a>
+    to leave a review.
+</p>
+
+{% endif %}
 <a href="/products/" class="btn btn-secondary">
     Back
 </a>

@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
 from django.db.models import Q
+from reviews.models import Review
+from reviews.forms import ReviewForm
 
 def home(request):
     return render(request, 'home.html')
@@ -35,14 +37,35 @@ def product_list(request):
     )
 
 def product_detail(request, product_id):
+
     product = get_object_or_404(
         Product,
         pk=product_id
     )
 
+    reviews = Review.objects.filter(
+        product=product
+    ).order_by('-created_at')
+
+    if request.method == 'POST' and request.user.is_authenticated:
+
+        form = ReviewForm(request.POST)
+
+        if form.is_valid():
+
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+
+    form = ReviewForm()
+
     return render(
         request,
         'products/product_detail.html',
-        {'product': product}
+        {
+            'product': product,
+            'reviews': reviews,
+            'form': form
+        }
     )
-
