@@ -3,13 +3,17 @@
 {% block content %}
 
 <h1 class="mb-4">Products</h1>
-<form method="GET" action="{% url 'products' %}">
+<form
+    id="searchForm"
+    method="GET"
+    action="{% url 'products' %}">
     <div class="row mb-4">
 
         <div class="col-md-10">
             <input
                 type="text"
                 name="search"
+                id="searchInput"
                 value="{{ search_query|default:'' }}"
                 class="form-control form-control-lg"
                 placeholder="Search products...">
