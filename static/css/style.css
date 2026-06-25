@@ -163,6 +163,23 @@ body {
     max-width: 700px;
     margin: auto;
 }
+.form-control{
+    border-radius:10px;
+    padding:12px;
+}
+
+textarea.form-control{
+    resize:none;
+}
+
+.card{
+    border-radius:15px;
+}
+
+.card-header{
+    border-top-left-radius:15px !important;
+    border-top-right-radius:15px !important;
+}
 /* Mobile */
 @media (max-width: 768px) {
 
