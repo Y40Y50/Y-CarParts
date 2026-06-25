@@ -4,8 +4,20 @@ from django.db.models import Q
 from reviews.models import Review
 from reviews.forms import ReviewForm
 
+from .models import Product, Category
+
 def home(request):
-    return render(request, 'home.html')
+    featured_products = Product.objects.all()[:4]
+    categories = Category.objects.all()
+
+    return render(
+        request,
+        'home.html',
+        {
+            'featured_products': featured_products,
+            'categories': categories,
+        }
+    )
 
 def product_list(request):
     products = Product.objects.all()

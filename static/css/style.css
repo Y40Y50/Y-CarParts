@@ -96,6 +96,73 @@ body {
     font-weight: 600;
 }
 
+.category-home-card{
+    border: none;
+    border-radius: 15px;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.category-home-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+.category-icon{
+    font-size: 3rem;
+}
+
+.category-home-card h5{
+    font-weight:700;
+}
+.category-home-card p{
+    font-size:.9rem;
+}
+.category-home-card span{
+
+    transition:.3s;
+
+}
+.category-home-card:hover span{
+
+    letter-spacing:1px;
+
+}
+
+.hero{
+    background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url("/static/images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+
+    min-height: 600px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+.hero h1{
+    font-weight: 700;
+}
+
+.hero h3{
+    font-weight: 400;
+}
+
+.hero p{
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: auto;
+}
 /* Mobile */
 @media (max-width: 768px) {
 
