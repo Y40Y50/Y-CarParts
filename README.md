@@ -555,7 +555,7 @@ Add screenshots of the following pages:
 
 # Wireframes
 
-Include the wireframes you created before development.
+![Wireframes](README-assets/wireframe.png)
 
 Recommended wireframes:
 
