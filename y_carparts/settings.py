@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import dj_database_url
-import cloudinary_storage
 import cloudinary
 
 
@@ -156,11 +155,6 @@ STORAGES = {
 
 # Cloudinary settings
 
-
-
-CLOUDINARY_STORAGE = {
-    "CLOUDINARY_URL": os.environ.get("CLOUDINARY_URL")
-}
 
 
 LOGIN_REDIRECT_URL = '/'
