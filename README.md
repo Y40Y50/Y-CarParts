@@ -23,7 +23,8 @@ The platform provides value to users by:
 
 **Deployed Application**
 
-*Heroku deployment URL will be added after deployment.*
+## 🚀 Live Demo
+https://y-carparts-97a02db8b97c.herokuapp.com/
 
 **GitHub Repository**
 
@@ -73,7 +74,7 @@ Customers can:
 * See stock availability.
 * View prices.
 
-![Products Page](readme-assets/products-page.png)
+![Products Page](README-assets/products-page.png)
 
 ## Category Filtering
 
@@ -85,7 +86,7 @@ Products can be filtered by category including:
 * Filters
 * Accessories
 
-![Category Filtering](readme-assets/filltercategories.png)
+![Category Filtering](README-assets/filltercategories.png)
 
 ## Product Search
 
@@ -95,7 +96,32 @@ Users can:
 * Use the JavaScript-enhanced live search functionality.
 * Quickly locate matching products.
 
-![Product Search](readme-assets/search.png)
+![Product Search](README-assets/search.png)
+
+
+###  E-commerce
+- Product listing page
+- Product detail page
+- Shopping cart system
+- Add / remove / update quantity
+- Checkout system
+- Stripe payment integration
+
+###  User System
+- User registration
+- Login / Logout
+- User profiles
+
+###  Media & Images
+- Product images stored in Cloudinary
+- Fast image delivery via CDN
+
+### Admin Panel
+- Add/edit/delete products
+- Manage categories
+- Manage orders
+- Upload images via admin
+
 
 ## Shopping Cart
 
@@ -107,7 +133,7 @@ Customers can:
 * Remove products from the cart.
 * View cart totals before checkout.
 
-![Shopping Cart ](readme-assets/cart.png)
+![Shopping Cart ](README-assets/cart.png)
 
 ## Checkout
 
@@ -117,7 +143,7 @@ Customers can:
 * Review their order.
 * Proceed to secure payment using Stripe Checkout.
 
-![Checkout](readme-assets/checkout.png)
+![Checkout](README-assets/checkout.png)
 
 ## Stripe Payments
 
@@ -125,7 +151,7 @@ The project integrates Stripe Test Mode to simulate secure online payments.
 
 Customers are redirected to Stripe's hosted checkout page where payments can be completed using Stripe's test card details.
 
-![Stripe Payments](readme-assets/stripe-payment.png)
+![Stripe Payments](README-assets/stripe-payment.png)
 
 ## Product Reviews
 
@@ -135,7 +161,7 @@ Authenticated users can:
 * Leave comments about products.
 * Help future customers make purchasing decisions.
 
-![Product Reviews](readme-assets/reviews.png)
+![Product Reviews](README-assets/reviews.png)
 
 ## Home Page
 
@@ -148,7 +174,7 @@ The homepage includes:
 * Responsive layout.
 * Footer with social media links.
 
-![Home Page](readme-assets/home-page.png)
+![Home Page](README-assets/home-page.png)
 
 ## Responsive Design
 
@@ -158,7 +184,7 @@ The website has been designed to support:
 * Tablet devices.
 * Mobile devices.
 
-![Mobile View](readme-assets/mobile-view.png)
+![Mobile View](README-assets/mobile-view.png)
 
 ## Navigation
 
@@ -186,7 +212,7 @@ The Y-CarParts application uses a relational database consisting of five main en
 
 ## Entity Relationship Diagram (ERD)
 
-![ERD](readme-assets/erd.png)
+![ERD](README-assets/erd.png)
 
 
 
@@ -330,6 +356,16 @@ This relational structure ensures the application remains organised while mainta
 
 ---
 
+## 🛠️ Tech Stack
+
+- Python (Django 6)
+- PostgreSQL (Neon)
+- Cloudinary (Image Hosting)
+- Stripe (Payments)
+- Bootstrap 5
+- WhiteNoise (Static Files)
+- Heroku (Deployment)
+
 # Installation
 
 ## 1. Clone the repository
@@ -423,6 +459,22 @@ The deployed Heroku application was tested against the local development version
 | Responsive Design | Pass  | Pass | Pass   |
 
 
+## Deployment (Heroku + Fixes)
+
+During deployment, several issues were resolved:
+
+### Problems faced:
+- Static files returning 404 on live server
+- WhiteNoise misconfiguration
+- Cloudinary storage package conflict
+- Missing collectstatic output on Heroku
+- Django 6 compatibility issues with older storage settings
+
+### Solutions applied:
+- Fixed WhiteNoise configuration:
+  ```python
+  STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # Security Features
 
 The Y-CarParts application implements several security features to protect user accounts and sensitive information.
@@ -465,37 +517,37 @@ Add screenshots of the following pages:
 # Screenshots
 
 ## Home Page
-![Home Page](readme-assets/home-page.png)
+![Home Page](README-assets/home-page.png)
 
 ## Products Page
-![Products](readme-assets/products-page.png)
+![Products](README-assets/products-page.png)
 
 ## Product Details
-![Product Detail](readme-assets/product-detail.png)
+![Product Detail](README-assets/product-detail.png)
 
 ## Shopping Cart
-![Cart](readme-assets/cart.png)
+![Cart](README-assets/cart.png)
 
 ## Checkout
-![Checkout](readme-assets/checkout.png)
+![Checkout](README-assets/checkout.png)
 
 ## Stripe Payment
-![Stripe Payment](readme-assets/stripe-payment.png)
+![Stripe Payment](README-assets/stripe-payment.png)
 
 ## Login
-![Login](readme-assets/login.png)
+![Login](README-assets/login.png)
 
 ## Register
-![Register](readme-assets/register.png)
+![Register](README-assets/register.png)
 
 ## Profile Page
-![Profile Page](readme-assets/profile-page.png)
+![Profile Page](README-assets/profile-page.png)
 
 ## Django Admin
-![Django Admin](readme-assets/admin-dashboard.png)
+![Django Admin](README-assets/admin-dashboard.png)
 
 ## ERD
-![ERD](readme-assets/erd.png)
+![ERD](README-assets/erd.png)
 
 
 
@@ -622,13 +674,13 @@ The project was validated using:
 ## HTML
 
 * W3C HTML Validator
-![HTML Validation](readme-assets/validatorw3HTML.png)
+![HTML Validation](README-assets/validatorw3HTML.png)
 
 
 ## CSS
 
 * W3C CSS Validator
-![CSS Validation](readme-assets/validatorw3CSS.png)
+![CSS Validation](README-assets/validatorw3CSS.png)
 
 ## Python
 
@@ -666,7 +718,7 @@ Google Lighthouse was used to test the application.
 | SEO | **90** |
 
 
-![Lighthouse ](readme-assets/lighthouse.png)
+![Lighthouse ](README-assets/lighthouse.png)
 
 ---
 
