@@ -640,6 +640,50 @@ Recommended wireframes:
 
 ---
 
+### Evidence of Resubmission Fixes
+
+The following improvements were made following feedback received after the previous submission.
+
+#### Register Page Protection
+
+Logged-in users are redirected to the home page if they attempt to access the registration page.
+
+![Register Redirect](README-assets/register-redirect.png)
+
+---
+
+#### Stripe Checkout Total
+
+The Stripe Checkout now displays the same total as the shopping cart.
+
+![Stripe Total](README-assets/stripe-total-fixed.png)
+
+---
+
+#### Successful Payment
+
+A successful Stripe payment redirects the user to the payment success page.
+
+![Payment Success](README-assets/payment-success.png)
+
+---
+
+#### Shopping Cart Cleared
+
+After a successful payment, the shopping cart is automatically emptied.
+
+![Cart Cleared](README-assets/cart-cleared.png)
+
+---
+
+#### Invalid Payment Test
+
+Entering an invalid test card number correctly displays a Stripe validation error.
+
+![Invalid Payment](README-assets/stripe-invalid-card.png)
+
+
+
 # Erroneous / Negative Testing
 
 | Test | Expected Result | Actual Result | Status |
@@ -655,6 +699,7 @@ Recommended wireframes:
 | Enter an invalid product URL | 404 page displayed | 404 page displayed | ✅ Pass |
 
 ---
+
 
 # Bugs
 
