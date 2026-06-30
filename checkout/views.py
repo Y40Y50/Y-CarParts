@@ -34,6 +34,8 @@ def checkout(request):
     )
 
 def payment_success(request):
+    request.session['cart'] = {}
+
     return render(
         request,
         'checkout/success.html'
