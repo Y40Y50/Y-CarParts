@@ -573,34 +573,39 @@ Recommended wireframes:
 
 ## Authentication
 
-| Test              | Expected Result         | Actual Result        | Status |
-| ----------------- | ----------------------- | -------------------- | ------ |
-| Register new user | User account created    | User account created | Pass   |
-| Login valid user  | Login successful        | Login successful     | Pass   |
-| Logout            | User logged out         | User logged out      | Pass   |
-| Invalid password  | Error message displayed | Error displayed      | Pass   |
+| Test                                     | Expected Result                   | Actual Result        | Status |
+| ---------------------------------------- | --------------------------------- | -------------------- | ------ |
+| Register new user                        | User account created successfully | User account created | ✅ Pass |
+| Login with valid credentials             | User logged in successfully       | Login successful     | ✅ Pass |
+| Logout                                   | User logged out successfully      | User logged out      | ✅ Pass |
+| Login with incorrect password            | Error message displayed           | Error displayed      | ✅ Pass |
+| Register using an existing username      | Validation error displayed        | Validation displayed | ✅ Pass |
+| Leave required registration fields empty | Validation messages displayed     | Validation displayed | ✅ Pass |
 
 ---
 
 ## Product Catalogue
 
-| Test                 | Expected Result               | Actual Result             | Status |
-| -------------------- | ----------------------------- | ------------------------- | ------ |
-| View products        | Products displayed            | Products displayed        | Pass   |
-| View product details | Product information displayed | Product displayed         | Pass   |
-| Search products      | Matching products returned    | Correct products returned | Pass   |
-| Filter by category   | Correct products shown        | Correct products shown    | Pass   |
+| Test                        | Expected Result                       | Actual Result              | Status |
+| --------------------------- | ------------------------------------- | -------------------------- | ------ |
+| View products               | Products displayed correctly          | Products displayed         | ✅ Pass |
+| View product details        | Product information displayed         | Product displayed          | ✅ Pass |
+| Search existing product     | Matching products returned            | Correct products returned  | ✅ Pass |
+| Search non-existing product | "No products found" message displayed | Correct message displayed  | ✅ Pass |
+| Filter by category          | Correct products displayed            | Correct products displayed | ✅ Pass |
 
 ---
 
 ## Shopping Cart
 
-| Test              | Expected Result  | Actual Result    | Status |
-| ----------------- | ---------------- | ---------------- | ------ |
-| Add to cart       | Product added    | Product added    | Pass   |
-| Increase quantity | Quantity updated | Quantity updated | Pass   |
-| Decrease quantity | Quantity updated | Quantity updated | Pass   |
-| Remove product    | Product removed  | Product removed  | Pass   |
+| Test                             | Expected Result                            | Actual Result     | Status |
+| -------------------------------- | ------------------------------------------ | ----------------- | ------ |
+| Add product to cart              | Product added successfully                 | Product added     | ✅ Pass |
+| Increase quantity                | Quantity updated correctly                 | Quantity updated  | ✅ Pass |
+| Decrease quantity                | Quantity updated correctly                 | Quantity updated  | ✅ Pass |
+| Remove product                   | Product removed successfully               | Product removed   | ✅ Pass |
+| Attempt checkout with empty cart | Checkout prevented or empty cart displayed | Correct behaviour | ✅ Pass |
+
 
 ---
 
@@ -608,28 +613,30 @@ Recommended wireframes:
 
 | Test                | Expected Result           | Actual Result      | Status |
 | ------------------- | ------------------------- | ------------------ | ------ |
-| Checkout page loads | Form displayed            | Form displayed     | Pass   |
-| Stripe checkout     | Stripe payment page opens | Stripe page opens  | Pass   |
-| Test payment        | Payment successful        | Payment successful | Pass   |
+| Checkout page loads | Form displayed            | Form displayed     | ✅Pass   |
+| Stripe checkout     | Stripe payment page opens | Stripe page opens  | ✅Pass   |
+| Test payment        | Payment successful        | Payment successful | ✅Pass   |
 
 ---
 
 ## Reviews
 
-| Test          | Expected Result      | Actual Result        | Status |
-| ------------- | -------------------- | -------------------- | ------ |
-| Submit review | Review saved         | Review saved         | Pass   |
-| Empty review  | Validation displayed | Validation displayed | Pass   |
+| Test                | Expected Result           | Actual Result        | Status |
+| ------------------- | ------------------------- | -------------------- | ------ |
+| Submit review       | Review saved successfully | Review saved         | ✅ Pass |
+| Submit empty review | Validation displayed      | Validation displayed | ✅ Pass |
+
 
 ---
 
 ## Responsive Testing
 
-| Device  | Expected Result   | Actual Result | Status |
-| ------- | ----------------- | ------------- | ------ |
-| Desktop | Layout correct    | Pass          | Pass   |
-| Tablet  | Layout responsive | Pass          | Pass   |
-| Mobile  | Layout responsive | Pass          | Pass   |
+| Device  | Expected Result           | Actual Result  | Status |
+| ------- | ------------------------- | -------------- | ------ |
+| Desktop | Layout displays correctly | Layout correct | ✅ Pass |
+| Tablet  | Responsive layout         | Responsive     | ✅ Pass |
+| Mobile  | Responsive layout         | Responsive     | ✅ Pass |
+
 
 ---
 
