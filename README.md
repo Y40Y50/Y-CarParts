@@ -640,6 +640,22 @@ Recommended wireframes:
 
 ---
 
+# Erroneous / Negative Testing
+
+| Test | Expected Result | Actual Result | Status |
+|------|-----------------|---------------|--------|
+| Login with an incorrect password | User is not logged in and an error message is displayed | Login prevented and error message displayed | ✅ Pass |
+| Register using an existing username | Registration is prevented and validation message displayed | Validation message displayed | ✅ Pass |
+| Register with empty required fields | Registration is prevented and required field messages displayed | Validation messages displayed | ✅ Pass |
+| Submit checkout form with empty required fields | Checkout is prevented and validation messages displayed | Validation messages displayed | ✅ Pass |
+| Search for a product that does not exist | No matching products message displayed | Correct message displayed | ✅ Pass |
+| Submit an empty review | Review is not submitted and validation message displayed | Validation message displayed | ✅ Pass |
+| Attempt to access the register page while logged in | User is redirected to the home page | User redirected successfully | ✅ Pass |
+| Attempt to access the Django admin without administrator permissions | Access denied | Access denied | ✅ Pass |
+| Enter an invalid product URL | 404 page displayed | 404 page displayed | ✅ Pass |
+
+---
+
 # Bugs
 
 ## Fixed Bugs
